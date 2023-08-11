@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/puppy_catch_flower.jpg">
+    <style>
+        .collapsible {
+            background-color: rgb(255, 255, 240);
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .active,
+        .collapsible:hover {
+            background-color: rgb(189, 220, 189);
+        }
+
+        .collapsible:after {
+            content: '\002B';
+            color: rgb(89, 123, 189);
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after {
+            content: "\2212";
+        }
+
+        .content {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color:rgb(250, 250, 250);
+        }
+
+        .big {
+            font-size: 20px;
+        }
+
+        * {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="big">Quick Guideline</h1>
+	
+    <!-- #region Installation -->
+
+    <p class="big">Installation</p>
+
+    <button class="collapsible">Step 1 : Install Node.js</button>
+    <div class="content">
+        <p>
+            1.  Go to page : <a href="https://nodejs.org/en">https://nodejs.org/en</a> and download a version of NodeJS
+            that has the word LTS (a.k.a. Long Term Support), for example : version 14.15.0 LTS.<br>
+            <br>
+            2.  Install NodeJS.
+        </p>
+    </div>
+
+    <button class="collapsible">Step 2 : Install me</button>
+    <div class="content">
+        <p>
+            Double click "install.bat". It can take about 5-10 minutes for the first time you install this tool.<br>
+            <br>
+            <img src="images/install_me.png">
+        </p>
+    </div>
+
+    <button class="collapsible">Step 3 : Open me</button>
+    <div class="content">
+        <p>
+            Double click "open_Cypress.bat". It can take a few minutes to open the tool.<br>
+            <br>
+            <img src="images/open_me.png"><br><br>
+            <img src="images/open_Cypress_up.png">
+        </p>
+    </div>
+
+    <!-- #endregion -->
+
+    <!-- #region Starting -->
+
+    <p class="big">Starting</p>
+
+    <button class="collapsible">Start 1 : Folder structure</button>
+    <div class="content">
+        <p>
+            <img src="images/folder_structure.png"><br>
+        </p>
+    </div>
+
+    <button class="collapsible">Start 2 : Features</button>
+    <div class="content">
+        <p>
+            <b>Implemented :</b><br>
+            <ol>
+                <li>Support changing config between different test environments.</li>
+                <li>API is simple & easy to use if you only need basic test cases.</li>
+                <li>Implementation of a simple text UI in the Console window of the web browser, for viewing a detailed bug report after completing each test case.</li>
+                <br>
+                <li>Support setting a specific test account for a test suite
+                    (it will be reset back to the default test account for other test suites).</li>
+                <li>Support re-testing failed test cases based on their IDs printed at the end of the log in the Console window of the web browser.</li>
+                <li>Support re-testing test cases starting from a specific test case ID.</li>
+                <li>Support re-testing specific test suites.</li>
+                <li>Support importing multiple test files into one test file and still support re-testing features.</li>
+                <br>
+                <li>Support declaring sample inputs of Intents, Entities to simplify input management in test files.
+                    Input can be specific or random.</li>
+                <li>Support sending value and action of a button to VA instead of sending a message.</li>
+                <li>Comparing messages is more precise in case the response message contains dynamic values.</li>
+                <li>Support comparing random response messages returned by VA.</li>
+                <li>Support comparing buttons in the response message to the expected buttons.</li>
+                <li>For technical limitations, the tool cannot receive Timeout messages but still support you to check the main logic
+                    of flow Timeout by using the wait feature of Cypress.</li>
+                <br>
+                <li>Support checking that no Incident or Call Record should be logged after a step.</li>
+                <li>Support checking information of a new Incident or Call Record after a step.</li>
+                <li>Support checking information of an old Incident or Call Record.</li>
+                <li>Support checking information of an anonymous Incident that you don't know its ticket number but know what is changed in the ticket.</li>
+                <li>Support checking chat transcript. This feature is not perfect but can be useful.</li>
+                <li>Support checking Hand-Off connection from client-side to server-side (not vice versa) after VA returns the connection message.</li>
+                <li>Auto close Hand-Off connection on ServiceNow after checking.</li>
+                <br>
+                <li>Support preparing data : set state of an Incident to an expected state.</li>
+                <li>Support preparing data : manipulate the state of multiple Incidents so that
+                    the total number of Incidents with the expected state should be &lt;= expected quantity.</li>
+                <br>
+                <li>Support generating manual test cases in Excel format with no test report.</li>
+                <li>Support generating manual test cases in Excel format with the bugs inserted as comments to corresponding steps.</li>
+            </ol>
+        </p>
+    </div>
+
+    <button class="collapsible">Start 3 : Change config between different test environments</button>
+    <div class="content">
+        <p>
+            <img src="images/fp_environment.png">
+            <img src="images/fc_environment_1.png">
+            <hr>
+			For ServiceNow, you can configure its settings here :<br><br>
+            <img src="images/fc_environment_3.png"/>
+            <hr>
+            For VA's test instances (DEV, TEST, Pre-PROD), you can configure their settings in the same file.<br>
+            <br>
+            <u>Examples</u><br><br>
+            <img src="images/fc_environment_2.png"/>
+        </p>
+    </div>
+	
+    <button class="collapsible">Start 4 : UI when running the tool</button>
+    <div class="content">
+        <p>
+            <a href="images/UI_01.png" target="_blank"><img src="images/UI_01.png" height="25%" width="25%"></a>
+            <a href="images/UI_04.png" target="_blank"><img src="images/UI_04.png" height="25%" width="25%"></a><br>
+            <a href="images/UI_05.png" target="_blank"><img src="images/UI_05.png"></a><br>
+            <a href="images/UI_06.png" target="_blank"><img src="images/UI_06.png"></a>
+        </p>
+    </div>
+
+    <button class="collapsible">Start 5 : How to start creating a new test file</button>
+    <div class="content">
+        <p>You can refer to the file "a_sample_file_basic.js" :<br><br>
+            <img src="images/fp_new_test_file.png">
+        </p>
+    </div>
+
+    <button class="collapsible">Start 6 : Chaining steps together to write test cases more quickly</button>
+    <div class="content">
+        <p>
+            Most functions for writing test cases can chain together.<br>
+            Those functions are located at the region "<b>API : Functions for writing a test case</b>" in file "<b>engine.js</b>".<br>
+            <br>
+            <img src="images/fp_engine.png">
+            <img src="images/fc_engine__functions_to_write_TCs.png"><br>
+            <br>
+            <u>Examples</u> (for demo purpose only, not real test case)<br>
+            <br>
+            <img src="images/example_chaining_functions.png">
+        </p>
+    </div>
+	
+	<button class="collapsible">Start 7 : Funny</button>
+    <div class="content">
+		<p>
+			For releasing stress, sometimes you can use the Vietnamese API below. They're synonyms of the formal functions.<br>
+			The API is located at the region "<b>Funny Interface</b>" in file "<b>engine.js</b>".<br><br>
+			<img src="images/funny.png">
+		</p>
+	</div>
+
+    <!-- #endregion -->
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
